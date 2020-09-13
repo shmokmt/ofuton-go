@@ -14,7 +14,7 @@ go get github.com/shmokmt/ofuton-go
 
 ### What's ofuton?
 
-Futon is one of the bedding widely used in Japan.
+Futon is one of the beddings widely used in Japan.
 
 ### Original source
 
