@@ -2,12 +2,15 @@ package main
 
 import (
 	"bufio"
+	"bytes"
+	_ "embed"
 	"fmt"
 	"os"
 	"time"
-
-	"github.com/gobuffalo/packr/v2"
 )
+
+//go:embed resources/ofuton.txt
+var ofutonTxt []byte
 
 var (
 	stdOut = bufio.NewWriter(os.Stdout)
@@ -21,15 +24,9 @@ func clear() {
 }
 
 func main() {
-	f, err := packr.NewBox("./resources").Open("ofuton.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
-
 	clear()
 	for {
-		scanner := bufio.NewScanner(f)
+		scanner := bufio.NewScanner(bytes.NewBuffer(ofutonTxt))
 		for scanner.Scan() {
 			fmt.Println(scanner.Text())
 			time.Sleep(200 * time.Millisecond)
