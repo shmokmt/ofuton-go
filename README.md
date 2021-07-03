@@ -8,8 +8,9 @@ ofuton ascii animation written in Go.
 
 ## Installation
 
+
 ```
-go get github.com/shmokmt/ofuton-go
+go install github.com/shmokmt/ofuton-go@latest
 ```
 
 ### What's ofuton?
